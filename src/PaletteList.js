@@ -6,7 +6,6 @@ class PaletteList extends Component {
         const {palettes} = this.props
         return(
             <div>
-                <MiniPalette />
                 <h1>PaletteList!</h1>
                 {palettes.map(palette => (
                                     <p>

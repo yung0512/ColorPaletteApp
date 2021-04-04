@@ -2,10 +2,10 @@ import Palette from './Palette'
 import './App.css';
 import React ,{Component} from 'react'
 import PaletteList from './PaletteList'
+import SingleColorPalette from './SingleColorPalette'
 import {Route,Switch} from 'react-router-dom'
 import {generatePalette} from './ColorHelpers'
 import seedsColors from './seedsColor'
-import { FindReplaceTwoTone } from '@material-ui/icons';
 
 class App extends Component {
   findPalette(id){
@@ -21,6 +21,7 @@ class App extends Component {
               exact path="/palette/:id" 
               render={(routeProps)=>(<Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))}/>)}
             />
+          <Route path="/palette/:paletteId/:colorId" render={()=><SingleColorPalette/>}/>
       </Switch>
     // <div className="App">
     //     <Palette palette={generatePalette(seedsColors[4])}/>

@@ -57,6 +57,67 @@ const styles = {
         textTransform: "uppercase",
         border: "none",
         textDecoration: "none"
+    },
+    boxContent:{
+        position: "absolute",
+        width:"100%",
+        left:"0px",
+        bottom: "0px",
+        padding: "10px",
+        fontSize: "12px",
+        color:"black",
+        letterSpacing: "1px",
+        textTransform: "uppercase"
+    },
+    copyOverlay:{
+        opacity:"0",
+        zIndex:"0",
+        width:"100%",
+        height:"100%",
+        transform: "scale(0.1)",
+        transition: "transform 0.6s ease-in-out"
+    },
+    showOverlay:{
+        transform: "scale(50)",
+        opacity:"1",
+        zIndex:"10",
+        position: "absolute"
+    },
+    copyMessage:{
+        position: "fixed",
+        left: "0",
+        top: "0",
+        right: "0",
+        bottom: "0",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        justifyContent: "center",
+        fontSize: "4rem",
+        transform: "scale(0.1)",
+        color: "white",
+        opacity: "0",
+        "& h1":{
+            fontWeight: "400",
+            textShadow: "1px 2px black",
+            background: "rgba(255,255,255,0.2)",
+            textAlign: "center",
+            padding: "1rem",
+            marginBottom:"0",
+            width:"100%",
+            textTransform:"uppercase"
+        },
+        "& p":{
+            fontSize: "2rem",
+            fontWeight:"100"
+        }
+    },
+    showMessage:{
+        opacity: "1",
+        zIndex:"25",
+        transition:"all 0.4s ease-in-out",
+        transform: "scale(1)",
+        transitionDelay: "0.3s"
     }
 }
 class ColorBox extends Component{
@@ -77,14 +138,14 @@ class ColorBox extends Component{
         return(
             <CopyToClipboard text={this.props.background} onCopy={this.changeCoptStates}>
                 <div style={{background:background}} className={classes.colorBox}>
-                    <div style={{background:background}} className={`copy-overlay ${this.state.copied && 'show'}`}>
+                    <div style={{background:background}} className={`${classes.copyOverlay} ${this.state.copied && classes.showOverlay}`}>
                     </div>
-                    <div className={`copy-msg ${this.state.copied && 'show'}`}>
+                    <div className={`${classes.copyMessage} ${this.state.copied && classes.showMessage}`}>
                         <h1>copied!</h1>
                         <p className={classes.copyText}>{this.props.background}</p>
                     </div>
-                    <div className="copy-container">
-                        <div className="box-content">
+                    <div >
+                        <div className={classes.boxContent}>
                         <span className={classes.colorName}>{name}</span>
                         </div>
                         <button className={classes.copyButton}>Copy</button>

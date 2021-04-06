@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ColorPaletteApp/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/ColorPaletteApp/static/js/main.cebaf877.chunk.js",
+    "main.js.map": "/ColorPaletteApp/static/js/main.cebaf877.chunk.js.map",
+    "runtime-main.js": "/ColorPaletteApp/static/js/runtime-main.661d1e20.js",
+    "runtime-main.js.map": "/ColorPaletteApp/static/js/runtime-main.661d1e20.js.map",
+    "static/css/2.d59c41ec.chunk.css": "/ColorPaletteApp/static/css/2.d59c41ec.chunk.css",
+    "static/js/2.1ae91598.chunk.js": "/ColorPaletteApp/static/js/2.1ae91598.chunk.js",
+    "static/js/2.1ae91598.chunk.js.map": "/ColorPaletteApp/static/js/2.1ae91598.chunk.js.map",
+    "static/js/3.8184ddf0.chunk.js": "/ColorPaletteApp/static/js/3.8184ddf0.chunk.js",
+    "static/js/3.8184ddf0.chunk.js.map": "/ColorPaletteApp/static/js/3.8184ddf0.chunk.js.map",
+    "index.html": "/ColorPaletteApp/index.html",
+    "static/css/2.d59c41ec.chunk.css.map": "/ColorPaletteApp/static/css/2.d59c41ec.chunk.css.map",
+    "static/css/main.ea1455b2.chunk.css.map": "/ColorPaletteApp/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.1ae91598.chunk.js.LICENSE.txt": "/ColorPaletteApp/static/js/2.1ae91598.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.661d1e20.js",
+    "static/css/2.d59c41ec.chunk.css",
+    "static/js/2.1ae91598.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.cebaf877.chunk.js"
+  ]
+}

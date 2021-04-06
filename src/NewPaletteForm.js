@@ -14,6 +14,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import {ChromePicker} from 'react-color'
 import DraggableColorBox from './DraggableColorBox'
 import {ValidatorForm,TextValidator} from "react-material-ui-form-validator"
+import { ThreeSixtySharp } from '@material-ui/icons';
 const drawerWidth = 400;
 
 const styles = theme => ({
@@ -108,7 +109,6 @@ class NewPaletteForm extends Component {
       handleDrawerOpen = () => {
         this.setState({ open: true });
       };
-    
       handleDrawerClose = () => {
         this.setState({ open: false });
       };
@@ -132,6 +132,11 @@ class NewPaletteForm extends Component {
           this.setState({
               [evt.target.name]:evt.target.value
           })
+      }
+      deleteBox(colorName){
+        this.setState({
+            colors:this.state.colors.filter(color=>color.name!==colorName)
+        })
       }
       savePalette(){
         let newName = this.state.newPaletteName
@@ -238,7 +243,12 @@ class NewPaletteForm extends Component {
               <div className={classes.drawerHeader} />
               
                   {this.state.colors.map(color=>(
-                    <DraggableColorBox color={color.color} name={color.name}/>
+                    <DraggableColorBox 
+                        key={color.name}
+                        color={color.color} 
+                        name={color.name} 
+                        handleClick={()=>this.deleteBox(color.name)}
+                    />
                   ))}
               
             </main>

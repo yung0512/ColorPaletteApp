@@ -1,22 +1,15 @@
 import React ,{Component} from 'react'
 import classNames from "classnames";
-import {Link} from "react-router-dom"
 import PaletteFormNav from "./PaletteFormNav"
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
 import Button from '@material-ui/core/Button';
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import {ChromePicker} from 'react-color'
 import DraggableColorList from './DraggableColorList'
 import ColorPickerForm from './ColorPickerForm'
-import {ValidatorForm,TextValidator} from "react-material-ui-form-validator"
 import {arrayMove} from 'react-sortable-hoc'
 
 const drawerWidth = 400;
@@ -24,24 +17,6 @@ const drawerWidth = 400;
 const styles = theme => ({
   root: {
     display: "flex"
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20
   },
   hide: {
     display: "none"
@@ -51,7 +26,9 @@ const styles = theme => ({
     flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    display:"flex",
+    alignItems:"center"
   },
   drawerHeader: {
     display: "flex",
@@ -76,6 +53,20 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
+  },
+  container: {
+    width:"90%",
+    height:"100%",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center"
+  },
+  buttons:{
+    width:"100%",
+  },
+  button:{
+      width:"50%"
   }
 });
 class NewPaletteForm extends Component {
@@ -155,61 +146,70 @@ class NewPaletteForm extends Component {
         const { open,colors } = this.state;
         const paletteFull = colors.length >= 20
         return (
-          <div className={classes.root}>
-            <PaletteFormNav classes={classes} open={open} palettes={palettes} handleSubmit={this.savePalette} handleDrawerOpen={this.handleDrawerOpen}/>
-            <Drawer
-              className={classes.drawer}
-              variant='persistent'
-              anchor='left'
-              open={open}
-              classes={{
-                paper: classes.drawerPaper
-              }}
-            >
-              <div className={classes.drawerHeader}>
-                <IconButton onClick={this.handleDrawerClose}>
-                  <ChevronLeftIcon />
-                </IconButton>
-              </div>
-              <Divider />
-              <Typography variant="h4">Design your palette</Typography>
-              <div>
-                <Button 
-                    onClick={this.clearColors}
-                    variant="contained"
-                    color="secondary"
-                >Clear Palette
-                </Button>
-                <Button 
-                    disabled={paletteFull}
-                    onClick={this.randomColor}
-                    variant="contained" 
-                    color="primary"
-                >Random Color
-                </Button>
-              </div>
-              <ColorPickerForm 
-                colors = {this.state.colors}
-                paletteFull={paletteFull} 
-                addColor={this.addNewColor}
-            />
-            </Drawer>
-            <main
-              className={classNames(classes.content, {
-                [classes.contentShift]: open
-              })}
-            >
-              <div className={classes.drawerHeader} />
-                <DraggableColorList 
-                    onSortEnd={this.onSortEnd}
-                    axis="xy"
-                    colors={this.state.colors} 
-                    removeColor={this.deleteBox}
+            <div className={classes.root}>
+                <PaletteFormNav 
+                    open={open} 
+                    palettes={palettes} 
+                    handleSubmit={this.savePalette} 
+                    handleDrawerOpen={this.handleDrawerOpen}
                 />
-                 {/*draggablecolorlist*/}
-              
-            </main>
-          </div>
+                <Drawer
+                    className={classes.drawer}
+                    variant='persistent'
+                    anchor='left'
+                    open={open}
+                    classes={{
+                        paper: classes.drawerPaper
+                    }}
+                >
+                <div className={classes.drawerHeader}>
+                    <IconButton onClick={this.handleDrawerClose}>
+                    <ChevronLeftIcon />
+                    </IconButton>
+                </div>
+                <Divider />
+                <div className={classes.container}>
+                    <Typography variant="h4" gutterBottom>Design your palette</Typography>
+                    <div className={classes.buttons}>
+                        <Button 
+                            className={classes.button}
+                            onClick={this.clearColors}
+                            variant="contained"
+                            color="secondary"
+                        >Clear Palette
+                        </Button>
+                        <Button 
+                            className={classes.button}
+                            disabled={paletteFull}
+                            onClick={this.randomColor}
+                            variant="contained" 
+                            color="primary"
+                        >Random Color
+                        </Button>
+                    </div>
+                    <ColorPickerForm 
+                        colors = {this.state.colors}
+                        paletteFull={paletteFull} 
+                        addColor={this.addNewColor}
+                    />
+                </div>
+                </Drawer>
+                <main
+                className={classNames(classes.content, {
+                    [classes.contentShift]: open
+                })}
+                >
+                <div className={classes.drawerHeader} />
+                    <DraggableColorList 
+                        onSortEnd={this.onSortEnd}
+                        axis="xy"
+                        colors={this.state.colors} 
+                        removeColor={this.deleteBox}
+                    />
+                    {/*draggablecolorlist*/}
+                
+                </main>
+            </div>
         );
       
     }

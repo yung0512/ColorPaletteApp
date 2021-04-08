@@ -112,14 +112,14 @@ class NewPaletteForm extends Component {
             colors:this.state.colors.filter(color=>color.name!==colorName)
         })
       }
-      savePalette(newPaletteName){
-        let newName = newPaletteName
-        const newPalette = {
-            paletteName:newName ,
-            id:newName.toLowerCase().replace(/ /g,"-"),
-            colors: this.state.colors
+      savePalette(newPalette){
+        const Palette = {
+            paletteName:newPalette.paletteName ,
+            id:newPalette.paletteName.toLowerCase().replace(/ /g,"-"),
+            colors: this.state.colors,
+            emoji:newPalette.emoji
          }
-        this.props.savePalette(newPalette)
+        this.props.savePalette(Palette)
         this.props.history.push("/")
       }
       onSortEnd = ({oldIndex, newIndex}) => {

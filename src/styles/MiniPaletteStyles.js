@@ -1,7 +1,7 @@
 export default{
     root:{
         background:"white",
-        border:'1px solid',
+        border:'1px solid #aaaaaa',
         borderRadius:'5px',
         padding:'0.5rem',
         position:'relative',
@@ -23,7 +23,7 @@ export default{
         justifyContent:"space-between",
         alignItems:"center",
         margin:"0",
-        color:"black",
+        color:"#aaaaaa",
         paddingTop:'0.5rem',
         fontSize:"1rem",
         position:"relative"

@@ -1,25 +1,26 @@
 {
   "files": {
     "main.css": "/ColorPaletteApp/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/ColorPaletteApp/static/js/main.4710cf58.chunk.js",
-    "main.js.map": "/ColorPaletteApp/static/js/main.4710cf58.chunk.js.map",
-    "runtime-main.js": "/ColorPaletteApp/static/js/runtime-main.661d1e20.js",
-    "runtime-main.js.map": "/ColorPaletteApp/static/js/runtime-main.661d1e20.js.map",
-    "static/css/2.d59c41ec.chunk.css": "/ColorPaletteApp/static/css/2.d59c41ec.chunk.css",
-    "static/js/2.7388d651.chunk.js": "/ColorPaletteApp/static/js/2.7388d651.chunk.js",
-    "static/js/2.7388d651.chunk.js.map": "/ColorPaletteApp/static/js/2.7388d651.chunk.js.map",
-    "static/js/3.8184ddf0.chunk.js": "/ColorPaletteApp/static/js/3.8184ddf0.chunk.js",
-    "static/js/3.8184ddf0.chunk.js.map": "/ColorPaletteApp/static/js/3.8184ddf0.chunk.js.map",
+    "main.js": "/ColorPaletteApp/static/js/main.4be94044.chunk.js",
+    "main.js.map": "/ColorPaletteApp/static/js/main.4be94044.chunk.js.map",
+    "runtime-main.js": "/ColorPaletteApp/static/js/runtime-main.eac8623a.js",
+    "runtime-main.js.map": "/ColorPaletteApp/static/js/runtime-main.eac8623a.js.map",
+    "static/css/2.b1c92442.chunk.css": "/ColorPaletteApp/static/css/2.b1c92442.chunk.css",
+    "static/js/2.ea27a85c.chunk.js": "/ColorPaletteApp/static/js/2.ea27a85c.chunk.js",
+    "static/js/2.ea27a85c.chunk.js.map": "/ColorPaletteApp/static/js/2.ea27a85c.chunk.js.map",
+    "static/js/3.37f9f8db.chunk.js": "/ColorPaletteApp/static/js/3.37f9f8db.chunk.js",
+    "static/js/3.37f9f8db.chunk.js.map": "/ColorPaletteApp/static/js/3.37f9f8db.chunk.js.map",
     "index.html": "/ColorPaletteApp/index.html",
-    "static/css/2.d59c41ec.chunk.css.map": "/ColorPaletteApp/static/css/2.d59c41ec.chunk.css.map",
+    "static/css/2.b1c92442.chunk.css.map": "/ColorPaletteApp/static/css/2.b1c92442.chunk.css.map",
     "static/css/main.ea1455b2.chunk.css.map": "/ColorPaletteApp/static/css/main.ea1455b2.chunk.css.map",
-    "static/js/2.7388d651.chunk.js.LICENSE.txt": "/ColorPaletteApp/static/js/2.7388d651.chunk.js.LICENSE.txt"
+    "static/js/2.ea27a85c.chunk.js.LICENSE.txt": "/ColorPaletteApp/static/js/2.ea27a85c.chunk.js.LICENSE.txt",
+    "static/media/bg.1295202c.svg": "/ColorPaletteApp/static/media/bg.1295202c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.661d1e20.js",
-    "static/css/2.d59c41ec.chunk.css",
-    "static/js/2.7388d651.chunk.js",
+    "static/js/runtime-main.eac8623a.js",
+    "static/css/2.b1c92442.chunk.css",
+    "static/js/2.ea27a85c.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.4710cf58.chunk.js"
+    "static/js/main.4be94044.chunk.js"
   ]
 }

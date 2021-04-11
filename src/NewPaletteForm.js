@@ -87,7 +87,7 @@ class NewPaletteForm extends Component {
           console.log(allColors)
       }
       render() {
-        const { classes, maxColors,palettes} = this.props;
+        const { classes,palettes} = this.props;
         const { open,colors } = this.state;
         const paletteFull = colors.length >= 20
         return (
@@ -133,7 +133,7 @@ class NewPaletteForm extends Component {
                         </Button>
                     </div>
                     <ColorPickerForm 
-                        colors = {this.state.colors}
+                        colors = {colors}
                         paletteFull={paletteFull} 
                         addColor={this.addNewColor}
                     />
@@ -149,7 +149,7 @@ class NewPaletteForm extends Component {
                         distance={20}
                         onSortEnd={this.onSortEnd}
                         axis="xy"
-                        colors={this.state.colors} 
+                        colors={colors} 
                         removeColor={this.deleteBox}
                     />
                     {/*draggablecolorlist*/}

@@ -9,9 +9,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import PaletteMetaForm from './PaletteMetaForm'
-import {ValidatorForm,TextValidator} from "react-material-ui-form-validator"
+import {ValidatorForm} from "react-material-ui-form-validator"
 import styles from "./styles/PaletteFormNav"
 
 class PaletteFormNav extends Component {
@@ -50,7 +49,7 @@ class PaletteFormNav extends Component {
     }
     render(){
         const {open ,palettes,classes,handleSubmit} = this.props
-        const {newPaletteName} = this.state
+        const {formShowing,handleDrawerOpen} = this.state
         return(
             <div className={classes.root}>
                 <CssBaseline />
@@ -59,13 +58,13 @@ class PaletteFormNav extends Component {
                     color="default"
                     className={classNames(classes.appBar, {
                         [classes.appBarShift]: open
-                })}
+                    })}
                 >
                     <Toolbar disableGutters={!open}>
                         <IconButton
                             color='inherit'
                             aria-label='Open drawer'
-                            onClick={this.props.handleDrawerOpen}
+                            onClick={handleDrawerOpen}
                             className={classNames(classes.menuButton, open && classes.hide)}
                         >
                         <AddToPhotosIcon />
@@ -96,7 +95,7 @@ class PaletteFormNav extends Component {
                         </Button>
                     </div>
                 </AppBar>
-                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} hideForm={this.hideForm}/>)}
+                {formShowing && (<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} hideForm={this.hideForm}/>)}
             </div>
         )
     }

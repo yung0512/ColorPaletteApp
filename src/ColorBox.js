@@ -1,10 +1,9 @@
 import React,{Component} from 'react'
-import chroma from 'chroma-js'
 import {Link} from 'react-router-dom'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {withStyles} from "@material-ui/styles"
 import styles from './styles/ColorBoxStyles'
-
+import classNames from 'classnames'
 
 class ColorBox extends Component{
     constructor(props){
@@ -20,15 +19,28 @@ class ColorBox extends Component{
         },()=>{setTimeout(()=>this.setState({copied:false}),1500)})
     }
     render(){
-        const {classes,name,background,showingFullPalette} = this.props;
+        const {copied} = this.state
+        const {classes,name,background,showingFullPalette,paletteId,id} = this.props;
         return(
-            <CopyToClipboard text={this.props.background} onCopy={this.changeCoptStates}>
-                <div style={{background:background}} className={classes.colorBox}>
-                    <div style={{background:background}} className={`${classes.copyOverlay} ${this.state.copied && classes.showOverlay}`}>
+            <CopyToClipboard text={background} onCopy={this.changeCoptStates}>
+                <div 
+                    style={{background:background}} 
+                    className={classes.colorBox}
+                >
+                    <div 
+                        style={{background:background}} 
+                        className={classNames(classes.copyOverlay, {
+                            [classes.showOverlay]: copied
+                        })}
+                    >
                     </div>
-                    <div className={`${classes.copyMessage} ${this.state.copied && classes.showMessage}`}>
+                    <div 
+                        className={classNames(classes.copyMessage, {
+                            [classes.showMessage]: copied
+                        })}
+                    >
                         <h1>copied!</h1>
-                        <p className={classes.copyText}>{this.props.background}</p>
+                        <p className={classes.copyText}>{background}</p>
                     </div>
                     <div >
                         <div className={classes.boxContent}>
@@ -37,7 +49,7 @@ class ColorBox extends Component{
                         <button className={classes.copyButton}>Copy</button>
                     </div>
                     {showingFullPalette && (
-                        <Link to={`/palette/${this.props.paletteId}/${this.props.id}`} onClick={e=>e.stopPropagation}>
+                        <Link to={`/palette/${paletteId}/${id}`} onClick={e=>e.stopPropagation}>
                             <span className={classes.seeMore}>More</span>
                         </Link>
                     )}

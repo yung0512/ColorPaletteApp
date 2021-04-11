@@ -17,7 +17,7 @@ class MiniPalette extends PureComponent{
         this.props.handleClick(this.props.id)
     }
     render(){
-        const {classes,paletteName,emoji,colors,id} = this.props;//the material ui will generate a classes object each class name has identical key value like class id
+        const {classes,paletteName,emoji,colors} = this.props;//the material ui will generate a classes object each class name has identical key value like class id
         const miniColorBoxes = colors.map(color=>(
             <div 
                 className={classes.miniColor} 

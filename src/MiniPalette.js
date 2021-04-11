@@ -10,7 +10,7 @@ class MiniPalette extends Component{
     }
     deletePalette(e){
         e.stopPropagation();
-        this.props.handleDelete(this.props.id)
+        this.props.openDialog(this.props.id)
     }
     render(){
         const {classes,paletteName,emoji,colors} = this.props;//the material ui will generate a classes object each class name has identical key value like class id

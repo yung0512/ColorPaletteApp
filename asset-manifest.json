@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ColorPaletteApp/static/css/main.3362c55c.chunk.css",
-    "main.js": "/ColorPaletteApp/static/js/main.f2bcd771.chunk.js",
-    "main.js.map": "/ColorPaletteApp/static/js/main.f2bcd771.chunk.js.map",
+    "main.js": "/ColorPaletteApp/static/js/main.8d789459.chunk.js",
+    "main.js.map": "/ColorPaletteApp/static/js/main.8d789459.chunk.js.map",
     "runtime-main.js": "/ColorPaletteApp/static/js/runtime-main.6bc2f38e.js",
     "runtime-main.js.map": "/ColorPaletteApp/static/js/runtime-main.6bc2f38e.js.map",
     "static/css/2.b1c92442.chunk.css": "/ColorPaletteApp/static/css/2.b1c92442.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.b1c92442.chunk.css",
     "static/js/2.10305a9f.chunk.js",
     "static/css/main.3362c55c.chunk.css",
-    "static/js/main.f2bcd771.chunk.js"
+    "static/js/main.8d789459.chunk.js"
   ]
 }

@@ -48,8 +48,8 @@ class PaletteFormNav extends Component {
         })
     }
     render(){
-        const {open ,palettes,classes,handleSubmit} = this.props
-        const {formShowing,handleDrawerOpen} = this.state
+        const {open ,palettes,classes,handleSubmit,handleDrawerOpen} = this.props
+        const {formShowing} = this.state
         return(
             <div className={classes.root}>
                 <CssBaseline />

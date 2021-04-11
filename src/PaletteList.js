@@ -3,9 +3,6 @@ import React ,{Component} from 'react'
 import { CSSTransition,TransitionGroup,} from 'react-transition-group';
 import MiniPalette from './MiniPalette'
 import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import blue from '@material-ui/core/colors/blue'
